@@ -1,0 +1,24 @@
+use universidade_u;
+
+select * from aluno;
+desc aluno;
+show create table aluno;
+
+CREATE TABLE `aluno` (
+  `sexo` char(1) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `ativo_sn` int DEFAULT '1',
+  `nome` varchar(25) DEFAULT NULL,
+  `cpf` varchar(14) DEFAULT NULL,
+  `idaluno` int NOT NULL AUTO_INCREMENT,
+  `data_nascimento` date DEFAULT NULL,
+  PRIMARY KEY (`idaluno`),
+  UNIQUE KEY `uc_aluno_cpf` (`cpf`),
+  UNIQUE KEY `uc_aluno_email` (`email`)
+);
+
+alter table aluno modify `idaluno` int NOT NULL AUTO_INCREMENT first;
+
+alter table aluno modify `ativo_sn` int DEFAULT '1' after cpf;
+
+alter table aluno modify `ativo_sn` int DEFAULT '1' after data_nascimento;;
