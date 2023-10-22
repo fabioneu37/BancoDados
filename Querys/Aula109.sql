@@ -10,6 +10,7 @@ $$
 delimiter ; 
 
 show procedure status where Db = 'universidade_u';
+drop procedure universidade_u.proc_variaveis_escopo_parametro;
 
 set @param2 = 'Parâmetro 2';
 select @param2;
