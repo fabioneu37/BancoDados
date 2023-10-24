@@ -25,12 +25,6 @@ begin
     fetch c_contratos into v_idcontrato, v_fk_aluno, v_fk_idcurso, v_fk_data_inscricao_curso,
     v_valor_total_curso, v_desconto, v_numero_parcelas, v_processado;
     
-	fetch c_contratos into v_idcontrato, v_fk_aluno, v_fk_idcurso, v_fk_data_inscricao_curso,
-    v_valor_total_curso, v_desconto, v_numero_parcelas, v_processado;
-    
-	fetch c_contratos into v_idcontrato, v_fk_aluno, v_fk_idcurso, v_fk_data_inscricao_curso,
-    v_valor_total_curso, v_desconto, v_numero_parcelas, v_processado;
-    
     select v_idcontrato, 
         v_fk_aluno, v_fk_idcurso, v_fk_data_inscricao_curso,
 		v_valor_total_curso, v_desconto, v_numero_parcelas, v_processado;
@@ -40,3 +34,5 @@ end $$
 delimiter ;
 
 call proc_boleto();
+drop procedure universidade_u.proc_boleto;
+select * from boleto;
