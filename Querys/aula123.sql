@@ -1,5 +1,7 @@
 use universidade_u;
 
+desc contrato;
+
 create table contrato(
 	idcontrato int not null auto_increment,
     fk_idaluno int not null,
