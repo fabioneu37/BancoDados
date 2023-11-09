@@ -52,11 +52,12 @@ begin
 			set v_boleto_valor_parcela = v_valor_total_curso / v_numero_parcelas;
 			set v_boleto_data_vencimento = date_add(v_fk_data_inscricao_curso, interval v_boleto_loop_parcelas month);
             
+            
 			insert into boleto(fk_idcontrato, data_vencimento, valor, numero_parcela)
             values(v_idcontrato, v_boleto_data_vencimento, v_boleto_valor_parcela, v_boleto_loop_parcelas);
 	
 			set v_boleto_loop_parcelas = v_boleto_loop_parcelas + 1;
-	    end while;
+        end while;
     
 		update contrato set processado = 's' where idcontrato = v_idcontrato;
     end if;
@@ -64,7 +65,8 @@ begin
 	until v_fim_loop > 0 end repeat; /* (quando a condição for verdadeira o laço será interrompido) */
     
     close c_contratos; /*fechar o cursor*/
-end $$
+end
+$$
 delimiter ;
 
 drop procedure universidade_u.proc_boleto;
@@ -74,5 +76,3 @@ select * from log;
 truncate table log;
 truncate table boleto;
 call proc_boleto();
-
-desc contrato;

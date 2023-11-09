@@ -2,6 +2,8 @@ use universidade_u;
 
 desc contrato;
 
+drop table contrato;
+
 create table contrato(
 	idcontrato int not null auto_increment,
     fk_idaluno int not null,
@@ -19,6 +21,7 @@ foreign key(fk_idaluno, fk_idcurso, fk_data_inscricao_curso)
 references aluno_curso(fk_idaluno, fk_idcurso, data_inscricao_curso);
 
 alter table aluno_curso drop column valor_pago_curso;
+
 
 create table boleto(
 	idboleto int primary key auto_increment,

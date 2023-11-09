@@ -1,5 +1,6 @@
 use universidade_u;
 
+drop table log;
 create table log(
   idlog int primary key auto_increment,
   log varchar (255)
