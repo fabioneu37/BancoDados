@@ -70,6 +70,8 @@ $$
 delimiter ;
 
 drop procedure universidade_u.proc_boleto;
+show create procedure universidade_u.proc_boleto;
+
 select * from contrato;
 select * from boleto;
 select * from log;

@@ -16,6 +16,8 @@ end $$
 delimiter ;
 
 show function status where Db = 'universidade_u';
+show create function universidade_u.func_qtde_idade;
+
 select func_qtde_idade(2) as Quantidade_Disciplinas;
 
 select 
