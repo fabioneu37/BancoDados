@@ -18,8 +18,8 @@ create trigger tr_before_insert_funcionario
 before insert on funcionario
 for each row
 begin
-   insert into funcionario_log(fk_idmatricula, tipo_log, funcao_antiga, funcao_nova, telefone_antigo, telefone_novo)
-   values(null ,'BI', null, NEW.funcao, null , NEW.telefone);
+    insert into funcionario_log(fk_idmatricula, tipo_log, funcao_antiga, funcao_nova, telefone_antigo, telefone_novo)
+    values(null ,'BI', null, NEW.funcao, null , NEW.telefone);
 end 
 $$
 delimiter ;
@@ -31,3 +31,5 @@ select * from funcionario;
 select * from funcionario_log;
 drop trigger universidade_u.tr_before_insert_funcionario;
 delete from funcionario where idmatricula = 1;
+show triggers;
+show create trigger universidade_u.tr_before_insert_funcionario;
